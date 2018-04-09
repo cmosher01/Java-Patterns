@@ -5,6 +5,21 @@ import com.google.common.xml.XmlEscapers;
 import java.util.Deque;
 import java.util.LinkedList;
 
+/**
+ * Simple XML fragment builder.
+ *
+ * Use {@link Fragment#elem(String)} for elements,
+ * {@link Attribute#attr(String, String)} for attributes,
+ * {@link Fragment#text(String)} for text.
+ *
+ * Use {@link Fragment#end()} to close the most recent element, if any.
+ *
+ * Use {@link Fragment#toString()} to build the fragment.
+ *
+ * Escapes text content and attributes.
+ *
+ * Does not check for malformed names of elements or attributes.
+ */
 public class Fragment {
     private final Deque<String> within = new LinkedList<>();
     private final StringBuilder out = new StringBuilder(128);

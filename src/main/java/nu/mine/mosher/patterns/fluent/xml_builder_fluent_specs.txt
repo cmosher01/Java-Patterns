@@ -1,12 +1,10 @@
 asdf<e a="qwer">zx<n foo="">nes<br/>ted</n>cv</e>poiu
 
 .text("asdf")
-.elem("e")
-    .attr("a", "qwer")
+.elem("e").attr("a", "qwer")
     .text("z")
     .text("x")
-    .elem("n")
-        .attr("foo")
+    .elem("n").attr("foo")
         .text("nes")
         .elem("br").end()
         .text("ted")
@@ -14,7 +12,7 @@ asdf<e a="qwer">zx<n foo="">nes<br/>ted</n>cv</e>poiu
     .text("cv")
 .end()
 .text("poiu")
-.end()
+.str()
 
 
 
@@ -25,7 +23,7 @@ s0 ->
     str (   ): Ak{end()'} >o
 
 s1 ->
-    attr(k,]): o<' k="v"' >s1
+    attr(k,v): o<' k="v"' >s1
     elem(e  ): o<'>' >s0.elem(e)
     text(t  ): o<'>' >s0.text(t)
     end (   ): e<-k o<'/>' >s0
