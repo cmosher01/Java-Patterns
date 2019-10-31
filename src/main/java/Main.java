@@ -7,6 +7,7 @@ public class Main
     static {
         SLF4JBridgeHandler.removeHandlersForRootLogger();
         SLF4JBridgeHandler.install();
+        java.util.logging.Logger.getLogger("").setLevel(java.util.logging.Level.FINEST);
     }
 
     private static final Logger LOG = LoggerFactory.getLogger(Main.class);
