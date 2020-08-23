@@ -1,4 +1,4 @@
-package nu.mine.mosher.cleanarch._03_interfaceadapters;
+package nu.mine.mosher.patterns.cleanarch._03_interfaceadapters;
 
 public class ViewModel {
     private final String sCreatedAt;

@@ -1,4 +1,4 @@
-package nu.mine.mosher.cleanarch._05_main;
+package nu.mine.mosher.patterns.cleanarch._05_main;
 
 public class Main {
     public static void main(final String... args) {

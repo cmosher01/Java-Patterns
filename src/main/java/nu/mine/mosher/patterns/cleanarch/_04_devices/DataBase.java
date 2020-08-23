@@ -1,6 +1,6 @@
-package nu.mine.mosher.cleanarch._04_devices;
+package nu.mine.mosher.patterns.cleanarch._04_devices;
 
-import nu.mine.mosher.cleanarch._03_interfaceadapters.DataBaseAccess;
+import nu.mine.mosher.patterns.cleanarch._03_interfaceadapters.DataBaseAccess;
 
 public class DataBase implements DataBaseAccess {
 }

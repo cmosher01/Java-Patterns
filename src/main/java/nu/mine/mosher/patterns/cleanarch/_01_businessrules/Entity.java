@@ -1,4 +1,4 @@
-package nu.mine.mosher.cleanarch._01_businessrules;
+package nu.mine.mosher.patterns.cleanarch._01_businessrules;
 
 import java.time.Clock;
 import java.time.Instant;

@@ -1,7 +1,7 @@
-package nu.mine.mosher.cleanarch._03_interfaceadapters;
+package nu.mine.mosher.patterns.cleanarch._03_interfaceadapters;
 
-import nu.mine.mosher.cleanarch._02_apprules.ResponseModel;
-import nu.mine.mosher.cleanarch._02_apprules.UseCaseOutputPort;
+import nu.mine.mosher.patterns.cleanarch._02_apprules.ResponseModel;
+import nu.mine.mosher.patterns.cleanarch._02_apprules.UseCaseOutputPort;
 
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;

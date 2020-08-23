@@ -1,7 +1,7 @@
-package nu.mine.mosher.cleanarch._04_devices;
+package nu.mine.mosher.patterns.cleanarch._04_devices;
 
-import nu.mine.mosher.cleanarch._03_interfaceadapters.ViewModel;
-import nu.mine.mosher.cleanarch._03_interfaceadapters.ViewPort;
+import nu.mine.mosher.patterns.cleanarch._03_interfaceadapters.ViewModel;
+import nu.mine.mosher.patterns.cleanarch._03_interfaceadapters.ViewPort;
 
 public class View implements ViewPort {
     @Override

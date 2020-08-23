@@ -1,7 +1,7 @@
-package nu.mine.mosher.cleanarch._02_apprules;
+package nu.mine.mosher.patterns.cleanarch._02_apprules;
 
-import nu.mine.mosher.cleanarch._01_businessrules.Entity;
-import nu.mine.mosher.cleanarch._03_interfaceadapters.DataBaseAccess;
+import nu.mine.mosher.patterns.cleanarch._01_businessrules.Entity;
+import nu.mine.mosher.patterns.cleanarch._03_interfaceadapters.DataBaseAccess;
 
 import java.time.Clock;
 
