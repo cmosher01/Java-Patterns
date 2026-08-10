@@ -1,17 +1,29 @@
-apply plugin: 'java'
-apply plugin: 'application'
+plugins {
+    id 'application'
+}
 
-mainClassName = 'Main'
+application {
+    mainClass = 'Main'
+}
 
-sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of 21
+        vendor = JvmVendorSpec.ADOPTIUM
+    }
+}
+
+repositories {
+    mavenCentral()
+}
 
 dependencies {
     /*
     For logging, code to slf4j API only.
     At runtime, choose your implementation (logback is just an example).
      */
-    implementation group: 'org.slf4j', name: 'slf4j-api', version: 'latest.release'
-    runtimeOnly group: 'ch.qos.logback', name: 'logback-classic', version: 'latest.release'
+    implementation 'org.slf4j:slf4j-api:latest.release'
+    runtimeOnly 'ch.qos.logback:logback-classic:latest.release'
 
     /*
     Bridge any other logging frameworks (used by any dependencies) to slf4j.
@@ -19,30 +31,22 @@ dependencies {
     redirection of commons-logging, log4j and java.util.logging to SLF4J"
      */
     /* Jakarta Commons Logging. Also need to exclude 'commons-logging'. */
-    runtimeOnly group: 'org.slf4j', name: 'jcl-over-slf4j', version: 'latest.release'
+    runtimeOnly 'org.slf4j:jcl-over-slf4j:latest.release'
     /* Apache Log4J. */
-    runtimeOnly group: 'org.slf4j', name: 'log4j-over-slf4j', version: 'latest.release'
+    runtimeOnly 'org.slf4j:log4j-over-slf4j:latest.release'
     /* java.util.logging (JUL). Also need to use SLF4JBridgeHandler. */
-    implementation group: 'org.slf4j', name: 'jul-to-slf4j', version: 'latest.release'
+    implementation 'org.slf4j:jul-to-slf4j:latest.release'
 
     /*
     Useful utility library Guava.
      */
-    implementation group: 'com.google.guava', name: 'guava', version: 'latest.release'
+    implementation 'com.google.guava:guava:latest.release'
 
-    /*
-    JUnit 5 unit testing framework
-     */
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: 'latest.release'
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: 'latest.release'
+    testImplementation 'org.junit.jupiter:junit-jupiter:latest.release'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
-repositories {
-    jcenter()
-    mavenCentral()
-}
-
-test {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
     testLogging {
         events "passed", "skipped", "failed"
